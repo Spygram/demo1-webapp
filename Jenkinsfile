@@ -7,9 +7,15 @@ pipeline{
       }
     }
     stage('build'){
+<<<<<<< HEAD
 	steps{
 	      sh "mvn clean package"
 	}
+=======
+      steps{
+        sh "mvn clean package"
+>>>>>>> origin/master
     }
+      }
   }
 }
