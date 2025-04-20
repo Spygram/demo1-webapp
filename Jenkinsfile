@@ -1,21 +1,16 @@
-pipeline{
-  agent any
-  stages{
-    stage('checkout'){
-      steps{
-        git 'https://github.com/Spygram/demo1-webapp.git'
-      }
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'master', url: 'https://github.com/Spygram/demo1-webapp.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
     }
-    stage('build'){
-<<<<<<< HEAD
-	steps{
-	      sh "mvn clean package"
-	}
-=======
-      steps{
-        sh "mvn clean package"
->>>>>>> origin/master
-    }
-      }
-  }
-}
